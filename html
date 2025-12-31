@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise!</title>
+    <style>
+        body {
+            background-color: #fce4ec;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            text-align: center;
+            overflow: hidden;
+        }
+        #page1, #page2 { transition: opacity 1s; width: 100%; }
+        #page2 { display: none; }
+        
+        h1 { color: #e91e63; margin-bottom: 20px;}
+        .gift-box {
+            font-size: 80px;
+            cursor: pointer;
+            animation: bounce 2s infinite;
+            background: white;
+            padding: 20px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .heart { font-size: 80px; animation: beat 1s infinite; margin-bottom: 20px; color: red;}
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+        @keyframes beat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="page1">
+        <h1>มีของจะให้...</h1>
+        <div class="gift-box" onclick="openGift()">🎁</div>
+        <p style="color: #555; margin-top: 20px;">แตะที่กล่องเพื่อเปิด</p>
+    </div>
+
+    <div id="page2">
+        <div class="heart">❤️</div>
+        <h1>Happy New Year!</h1>
+        <p>มีความสุขมากๆ นะครับ/นะคะ</p>
+    </div>
+
+    <script>
+        function openGift() {
+            document.getElementById('page1').style.display = 'none';
+            document.getElementById('page2').style.display = 'block';
+            document.body.style.backgroundColor = '#ffebee';
+        }
+    </script>
+
+</body>
+</html>
